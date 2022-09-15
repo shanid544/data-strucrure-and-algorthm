@@ -12,6 +12,74 @@ binary tree
 hashtable
 heap
 =====================
+Euclid's Algorthm
+---------------------
+how to find GCD?
+given m and n , m>n
+1)m%n==r
+2)if r==0, GCD=n
+3)m=n, n=r
+4)repeat 1 one to 2
+========================
+why algorthms
+----------------------
+idea about running time
+can make improvment
+hardwere requrment
+feesible or not
+==========================
+why data structure
+----------------------------
+to store the data in systamatic manner
+=======================================
+Analysis of algorthm
+----------------------
+time complexity
+space complexity
+=======================
+types of tome complexity
+--------------------------
+best case
+worst case
+avarage case
+worst is used commen
+============================
+RAM model computation
+----------------------------
+assumptions we follow in calcualting time complexity
+infinit memmory
+operation takes unit time
+memmory acces take unit time
+data can acces from both disk and ram but here we assume data is acces rom the ram
+===================================================================================
+Bubble sort algorthm
+----------------------
+for(int i=0;i<l-1;i++){
+            for(int j=0;j<l-1-i;j++){
+                if(a[j]>a[j+1]){
+                    temp=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=temp;
+                }
+            }
+        }
+        
+ ========================
+ Big O natation
+ --------------
+ O(n^2)={f(n):there exist positive constands c and n0 such that 0<f(n)<c(n0 ^ 2) for all n>n0}
+ ie : On^2 is set of functions where positive constands c and n0 such that 0<f(n)<c(n0 ^ 2) for all n>n0
+ O (g(n)) = { f(n) : there exist positive constants c and ng such that 0 <f(n)< cg(n) for all n= no - this is also sam eas above n^2 replcaed by g(n)
+ =======================================================================================================================================================
+ Time complexity order
+ -----------------------
+ logn<n^1/2<n<nlogn<n^2<n^3<2^n<n!
+ ================================
+ 
+ 
+ 
+ 
+ 
 
 
 
