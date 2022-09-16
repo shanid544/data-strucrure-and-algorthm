@@ -118,6 +118,21 @@ items         |            |indipendent of|
  partiallt    |            |              |
  sorted array |            |              |
  ------------------------------------------
+ ===========================================
+ stable/unstable sort
+ ------------------------
+ 3,5,2,1,5',10 - unsorted ayyay
+ 1,2,3,5,5',10 - stable sort
+ 1,2,3,5',5,10 - unstable sort
+ why? think!!!(https://www.linkedin.com/learning/introduction-to-data-structures-algorithms-in-java/stable-vs-unstable-sorts?autoplay=true&resume=false&u=2007516)
+ ==================================================================================================================================================================
+ serching for a elemnt in an un-ordered array - O(n)
+ delete a elemnt in an un-ordered array - O(n)
+ serching for a elemnt in an ordered array - O(logn)
+ inserting in an ordered array - search for the loc + move the rest - O(n)
+ deleting in an  ordered array - search for the item + move the rest - O(n)
+ ===========================================================================
+ 
  
  
  
