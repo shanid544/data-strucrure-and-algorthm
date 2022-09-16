@@ -103,8 +103,21 @@ for(int i=0;i<l-1;i++){
 
         }
 ======================================
-
- 
+comparison insertion sort/bubble sort/selection sort
+-----------------------------------------------------
+insertion sort| bubble sort| selection sor|
+------------------------------------------
+reletively    |inefficient |good than     |
+good          |            |bubble sort   |
+for small     |            |--------------|
+number of     |            |running time  |
+items         |            |indipendent of|
+---------------            |ordering      |
+ relatively   |            |of element    |
+ good for     |            |              |
+ partiallt    |            |              |
+ sorted array |            |              |
+ ------------------------------------------
  
  
  
