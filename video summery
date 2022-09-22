@@ -131,7 +131,10 @@ items         |            |indipendent of|
  serching for a elemnt in an ordered array - O(logn)
  inserting in an ordered array - search for the loc + move the rest - O(n)
  deleting in an  ordered array - search for the item + move the rest - O(n)
- ===========================================================================
+ deleting from head - o(1)
+ inserting to head - O(1)
+ 
+===========================================================================
  
  
  
