@@ -135,6 +135,51 @@ items         |            |indipendent of|
  inserting to head - O(1)
  
 ===========================================================================
+///////doubly linked list and sort in in limkked list need s look one more tome
+=====================
+stack
+-----
+push : insert to top
+pop : delete from top return it
+peek : return the top
+LIFO
+===================================
+ADT
+----
+arrays and linked list are real data structure ie, it reperesends in physical memmory as such
+but stack and queue are ABSTRACT DATA TYPE ie, these are implimented from raray sor linked list
+================================================================================================
+Queue
+-----
+head
+tail
+enqueue: inserting into queue from tail
+dequeue: removig from queue from head
+
+			   ............................
+romoving<--head                            tail<--inserting
+			   ............................
+		
+peek: retun the element at head
+if we remove from queue the element at head index will remove <1><2><3><4><5><6><7><8><9><10><11><12><13>
+                                                               H                                       R
+                                                              <><2><3><4><5><6><7><8><9><10><11><12><13>
+															     H                                    R
+															  <><><3><4><5><6><7><8><9><10><11><12><13>
+															       H                                 R
+now if we want to enqueue new element,actually we have spece in queue, but tail need to change from current position to here (TAIN INDEX-HEADINDEX<LENGTH OF ARRAY)(12-3<13) IN THIS CASE WILL MOVE TAIL TO "0"th INDEX AND WE ADD ELEMENT FROM THERE THIS situation is called circular queue(tail again back to 0 th index)
+                                                                   0 1 2  3  4  5  6  7  8  9   10  11  12
+                                                                  <><><3><4><5><6><7><8><9><10><11><12><13>
+															       T   H       
+=========================================================================================================================										De Queue - double ended queue
+-----------------------------
+not using in coding beacuse of the complexity
+allows remove/add from both tail and head
+insert left, insert right, delete left, delete right
+https://www.softwaretestinghelp.com/deque-in-java/
+================================================================
+priority queue will learn after heap
+================================================
  
  
  
