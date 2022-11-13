@@ -180,7 +180,416 @@ https://www.softwaretestinghelp.com/deque-in-java/
 ================================================================
 priority queue will learn after heap
 ================================================
+
+
+important topics
+----------------------
+Analysis of algorthm
+Arrays
+sorting algorthm
+linked list
+stack
+queue
+more sorting algorthm
+recursion
+binary tree
+hashtable
+heap
+=====================
+Euclid's Algorthm
+---------------------
+how to find GCD?
+given m and n , m>n
+1)m%n==r
+2)if r==0, GCD=n
+3)m=n, n=r
+4)repeat 1 one to 2
+========================
+why algorthms
+----------------------
+idea about running time
+can make improvment
+hardwere requrment
+feesible or not
+==========================
+why data structure
+----------------------------
+to store the data in systamatic manner
+=======================================
+Analysis of algorthm
+----------------------
+time complexity
+space complexity
+=======================
+types of tome complexity
+--------------------------
+best case
+worst case
+avarage case
+worst is used commen
+============================
+RAM model computation
+----------------------------
+assumptions we follow in calcualting time complexity
+infinit memmory
+operation takes unit time
+memmory acces take unit time
+data can acces from both disk and ram but here we assume data is acces rom the ram
+===================================================================================
+Bubble sort algorthm
+----------------------
+for(int i=0;i<l-1;i++){
+            for(int j=0;j<l-1-i;j++){
+                if(a[j]>a[j+1]){
+                    temp=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=temp;
+                }
+            }
+        }
+        
+ ========================
+ Big O natation
+ --------------
+ O(n^2)={f(n):there exist positive constands c and n0 such that 0<f(n)<c(n0 ^ 2) for all n>n0}
+ ie : On^2 is set of functions where positive constands c and n0 such that 0<f(n)<c(n0 ^ 2) for all n>n0
+ O (g(n)) = { f(n) : there exist positive constants c and ng such that 0 <f(n)< cg(n) for all n= no - this is also sam eas above n^2 replcaed by g(n)
+ =======================================================================================================================================================
+ Time complexity order
+ -----------------------
+ logn<n^1/2<n<nlogn<n^2<n^3<2^n<n!
+ ================================
+ Selection Sort
+ --------------
+ for(int i=0;i<a.length-1;i++){
+            int minIndex=i;
+            for(int j=i+1;j<a.length;j++){
+                if(a[minIndex]>a[j]){
+                    minIndex=j;
+                }
+            }
+            int temp=a[minIndex];
+            a[minIndex]=a[i];
+            a[i]=temp;
+        }
+ =========================================
+ insertion Sort
+ --------------
+  int j=0;
+        for(int i=0;i<a.length;i++){
+            int current=a[i];
+            for(j=i-1;j>=0;j--){
+                if(current<a[j]){
+                    a[j+1]=a[j];
+                }
+            }
+            a[j+1]=current;
+
+        }
+======================================
+comparison insertion sort/bubble sort/selection sort
+-----------------------------------------------------
+insertion sort| bubble sort| selection sor|
+------------------------------------------
+reletively    |inefficient |good than     |
+good          |            |bubble sort   |
+for small     |            |--------------|
+number of     |            |running time  |
+items         |            |indipendent of|
+---------------            |ordering      |
+ relatively   |            |of element    |
+ good for     |            |              |
+ partiallt    |            |              |
+ sorted array |            |              |
+ ------------------------------------------
+ ===========================================
+ stable/unstable sort
+ ------------------------
+ 3,5,2,1,5',10 - unsorted ayyay
+ 1,2,3,5,5',10 - stable sort
+ 1,2,3,5',5,10 - unstable sort
+ why? think!!!(https://www.linkedin.com/learning/introduction-to-data-structures-algorithms-in-java/stable-vs-unstable-sorts?autoplay=true&resume=false&u=2007516)
+ ==================================================================================================================================================================
+ serching for a elemnt in an un-ordered array - O(n)
+ delete a elemnt in an un-ordered array - O(n)
+ serching for a elemnt in an ordered array - O(logn)
+ inserting in an ordered array - search for the loc + move the rest - O(n)
+ deleting in an  ordered array - search for the item + move the rest - O(n)
+ deleting from head - o(1)
+ inserting to head - O(1)
  
+===========================================================================
+///////doubly linked list and sort in in limkked list need s look one more tome
+=====================
+stack
+-----
+push : insert to top
+pop : delete from top return it
+peek : return the top
+LIFO
+===================================
+ADT
+----
+arrays and linked list are real data structure ie, it reperesends in physical memmory as such
+but stack and queue are ABSTRACT DATA TYPE ie, these are implimented from raray sor linked list
+================================================================================================
+Queue
+-----
+head
+tail
+enqueue: inserting into queue from tail
+dequeue: removig from queue from head
+
+			   ............................
+romoving<--head                            tail<--inserting
+			   ............................
+		
+peek: retun the element at head
+if we remove from queue the element at head index will remove <1><2><3><4><5><6><7><8><9><10><11><12><13>
+                                                               H                                       R
+                                                              <><2><3><4><5><6><7><8><9><10><11><12><13>
+															     H                                    R
+															  <><><3><4><5><6><7><8><9><10><11><12><13>
+															       H                                 R
+now if we want to enqueue new element,actually we have spece in queue, but tail need to change from current position to here (TAIN INDEX-HEADINDEX<LENGTH OF ARRAY)(12-3<13) IN THIS CASE WILL MOVE TAIL TO "0"th INDEX AND WE ADD ELEMENT FROM THERE THIS situation is called circular queue(tail again back to 0 th index)
+                                                                   0 1 2  3  4  5  6  7  8  9   10  11  12
+                                                                  <><><3><4><5><6><7><8><9><10><11><12><13>
+															       T   H       
+=========================================================================================================================										De Queue - double ended queue
+-----------------------------
+not using in coding beacuse of the complexity
+allows remove/add from both tail and head
+insert left, insert right, delete left, delete right
+https://www.softwaretestinghelp.com/deque-in-java/
+================================================================
+priority queue will learn after heap
+================================================
+ 
+ 
+ 
+ 
+
+
+Recursion
+----------
+breaking condition is needed for recursion
+if we are not putting breaking condition we will get stackoverflow exception
+why it is happening?
+every recursive call store into stack, if the call tend to infinite stack will overflow
+tower of honai
+Recursive methods are more concise to code, but run slower and require more memory.
+
+MergeSort
+----------
+java collection framework use merge sort as default sort
+time comlexity = nlogn
+
+trees
+-------------------
+sorted array - search(fast), insert(slow), delete(slow)
+linked list - search(slow), insert(fats) , delete(slow)
+binary search tree is best for these three opertaion
+in tree data structure, we cannot have 2 paths to reach one node
+perent,children, node,edge
+node which have no children called leaf node
+root node
+level = level of root is zero, level of root child is level 1, etc..
+level is the meshure of how far a node from its root.
+subtree
+
+binary tree
+----------
+maximum number of child node is 2
+insert a node - recursive we cam do
+find a node - recursive
+delete a node
+	node to be deleted is a leaf
+	node to be deleted has one child
+	node to be deleted has 2 child - most complicated so not imlimenting we have alternative soft delete
+travers a binary tree
+	inorder
+		left subtree->root->right subtree (recursuve)
+	preorder
+		root->left->rift
+	postorder
+		left->right->root
+balanced tree unbalanced tree	
+	sorted array elemts->inserty into tree->it will be un-balanced (like linked list- all left node will be null)
+hight of balanced binary tree
+	log(n) (base = 2, n = no.of node)
+time comlexity
+	search->log(n)
+	delect->log(n)
+	insert->log(n)
+Quick Sort
+	recursin based
+	worst case: n*n
+	avg case:n*log(n)
+	inpalce sorting
+	merge sort is not inplace sort
+	select pivot
+	grater than pivot right
+	less than pivot left
+	Algorithm
+		QuickSort(A,start,end)
+			pivot = partition(a,start,end)
+			QuickSort(A,start,pivot-1)
+			QuickSort(A,pivot+1,end)
+		Partition(A,strat,end)
+			pivot=A(end)
+			i=A(start)
+			for(j=start to end-1_
+				if(A[j]<pivot)
+					exchange(a[I],A[J])
+					i=i+1
+			exchange A[p],A[i]
+Shell Sort
+	improved version of insertion sort
+	O(n) -> n^(7/6) to n^(3/2)
+Redix Sort
+	leaniar time
+	sort by redix position (in these cases we have information about the array elements)
+Counting Sort
+	leaniar time(in these cases we have information about the array elements)
+Bucket Sort
+	leaniar time(in these cases we have information about the array elements)
+	compination of counting sort and redix sort
+Heap DS
+	heap is used to implement priority queue
+	it is data structre, not java memmory heap
+	heap is binary tree, not binary search tree(L<R<R)
+	heap is 
+		complete binary treee
+			fill in order leaft to right(we cant add a new node in right)
+		every node has a key which is grater or eaqual to the key of its own child
+deleting a root node from heap
+	root will be empty->replce with last node(last leaf node) of heap
+	so the heap property will altered
+	so we compare the root node val with its child node val
+	greter child node replaced with the root node
+	its happen for every childe node
+	time complexity
+		put the last node to the root : constand time
+		fixing the the heap : logn base2
+		overoll : log(n)
+inserting a node to heap
+	So keeping to the first heap property, that the heap should be complete, insert the node in appropriate position
+	But if we do that, it may break the second heap property, which is that each parent node should be greater than its children. So we need to bubble this new node upwards as long as its value is greater than the parent node
+	time complexity :  log(n)
+time complexity to get max node : 
+	constant time (max node at right at the node)
+Heap as priority queue
+	Because the largest element is always at the root node in a heap, 
+	the heap data structure may be used as a priority queue. 
+	Let's say that the keys at each node represent the priority of an item or a node to be processed. 
+	Then the root element will always have the highest priority, isn't it? 
+	And once we are done processing the root node, we can delete it from the heap. 
+	And after we fix the heap, the node with the next higher priority will come to the root, right? 
+	So now, that node may be processed. 
+	So using heaps as priority queues is really easy and straightforward.
+updatin a node in a heap
+	update the node
+	depends on the valu of the node updated we may need to psh down the node or bubble up the node
+	so, the time complexity
+		log(n)
+heap as array
+		Now, how to we implement a heap?
+		Of course, we can create a node object, 
+		and then just create a binary tree-like structure, 
+		just making sure that the heap properties are maintained. All right? 
+		But there is another way. We can use an array as an underlying data structure. 
+		And why does that work? Well, 
+		because if you look at a heap, the order in which the nodes are inserted can be marked as this. Inserted. 
+		I mean considering that zero is for the first node, one for the second and so on. 
+		This is because we need to maintain the first heap property, which means that the heap should be complete. 
+		Now, if you look at any node and its immediate children, you can see a relationship. So, if the parent is marked as i, 
+		its left child will be marked 2i+1, 
+		and its right child will be marked 2i+2. Right? 
+		Now interestingly the array indices also start from zero, 
+		and we can just represent the various nodes of the heap as elements of the array.
+heap sort
+	 Now we'll look at the heap sort algorithm, 
+	 which is another n-log-n algorithm. 
+	 Let's say we have some data in the form of a heap data structure,
+	 and we want to sort it. On the right-hand side, we will display the array presentation of the heap. 
+	 We know that the root is the largest element in the heap, 
+	 and we would like to sort the data in the array in the ascending order. 
+	 What we can do is to exchange the root element with the last element of the array.  
+	 the largest number, has reached the last index of the array, we can consider that part as sorted.
+	 After doing this exchange, the heap needs to be fixed, which is just like the case of deleting the root node
+	 time complexity: 
+	 nlog(n)
+buildin a heap
+	Let's see how to arrange some given numbers in a heap data structure. 
+	Let's say we are given this array of numbers. 
+	And we would like to store them in another array of the same size, 
+	such that this new array represents a heap. So let's just start with the first element. 
+	The first element should become the root. So it should be placed at index 0
+hash table
+	we will learn about Hash Tables. 
+	Hash Tables are data structures with are create for very fast insertion and retrieval data almost in constant time. 
+	It's just a collection of key end value players. The keys need not be just numbers.
+	They can be any type of object. 
+	Similarly, value can also be any object that we would like to store corresponding to a key. 
+	This value is known as satellite data. 
+	Think about a bakery which has these kind of regular items. 
+	And for each item and also the size, 
+	it may have created some kind of pin identifier. 
+	Let's say it's just a number, for simplicity. 
+	And if the records for all these items were to be stored in a computer, 
+	one may choose to use a Hash Tables table structure to store these records. 
+	As you can see, an item contains information about which item it is, its size, and its price. 
+	So if a billing application was written, it will be very fast to access these records by the key, 
+	which is the ID of the item. Similarly, if we want to store users, we may choose to use their email addresses as the key, which will be of string type. And the value can be the corresponding user object. But how is it that we can access the values using the keys in constant time? Think about another data structure which gives us constant time insertion and retrieval of data. It is the added data structure which lets us do that. If we know the index of the element, then inserting and reading data at that index is a constant time operation, isn't it? So the trick is to use add is as an underlying data structure. But the issue is that we can only use integer as keys because add in indexes are integers. So let's see how a Hash Tables is designed, such that it is able to put any type of object as a key. So let's start with direct access tables.
+direct acess tables
+	Direct access tables are very simple data structures which can store data in key value pair form. 
+	But it does not work in all the cases. It works only when the keys are integers which are drawn from a set of m elements. 
+	Let's say a set of integers from zero to m-1. 
+	Another assumption is that each of the keys that we use is unique. 
+	This is very easy to implement. 
+	We just use a regular area of size m. So that its index ranges from zero to m minus one, 
+	and the index of the area can be used for the key, and the satellite data corresponding to that key may be stored at that particular index. 
+	keys which may range from zero to m minus one and the data associated with the key can be inserted or searched or deleted directly using the index of the area which is equal to that key. 
+	What about if the key set is very large? Well, then we need a very large area, right? Or, 
+	even worse, what if the key data set is not very large, but the range of values is very large? 
+	For example, the number of keys may be, say, a few hundred, and they're distinct, but they may range from, say, a hundred to a million. 
+	If you use an area of size million, just to store a few hundred elements, that would be a huge wastage of space, isn't it? 
+	Another problem with direct access tables is that the keys must be integers. 
+	That is, we cannot use characters or strings or any other kind of object as a key, right? 
+	So to solve these kind of problems, we use what is known as hashing.
+Hashing
+	Hashing is a way to map the keys of any type, 
+	it can be a string or any other object, to a random array index, okay? 
+	That's the big idea. And to do that, we use what is called as a hash function. 
+	A hash function is a function which maps keys randomly into slots of a table, which is represented by an array. 
+	All right, so let's say we have a key given. And if we apply the hash function on this key, we will get back an integer value, which can be used as an array index. 
+	We will see some pointers on how to implement some simple hashing techniques later, 
+	but for now let's understand some ideas behind hashing. 
+	One thing to think about is what happens if we have a key which, when hashed, 
+	maps to a slot that has already been mapped and already contains some data? 
+	Where will we store the data associated with the new key now? 
+	So when we require to be inserted maps to an already-occupied slot, 
+	we say that a collision has occurred. 
+	So does this make hashing useless? Well, not quite. 
+	There are ways to resolve collisions, and I want you to think about what may be the simplest way to do that.
+Resolving collition through chaining
+	One of the ways to resolve collisions can be not to insert the data directly into the array slot. Rather, we can use a list, a linked list kind of data structure for each slot. So even if multiple keys map to the same slot, the records can be stored as a linked list. Here, each record contains the key, as well as the satellite data in a node of a linked list. So if the hash function h, when applied to keys K2 and K3, evaluate to a single integer value i, we can store the data associated with keys K2 and K3 as a linked list at the same array index i. So this method of resolving collisions is called the method of chaining. Now what would be the worst-case time complexity of finding the item if we use chaining? Think about what will happen in the worst case. Well, in the worst case, all the keys may map to a single slot, right? That is, when we hash any key, we get the same value of the index where the record should be inserted. So all the records have been stored in one single linked list. So if you have to find the record associated with some key, say Kj, the time complexity will be big O of n, right, which is linear time, and that is not great, because our intention was to get the record in nearly constant time, so worst case is not good if we use chaining to resolve collisions. But what about the average case? Let's say, in general, we have n keys, which need to map to m slots in the array, and we assume that hashing is uniform, that is, each key is equally likely to be hashed to any slot in the table, independent of where other keys are hashed. Or we can say that the hashing function is such that the hash values of all the keys are sort of evenly distributed across the slots of the table. In that case, in each slot, how many records will we have on an average? That will be n by m, right, because there are n records evenly distributed in m slots, okay? So let's call this alpha, and this alpha is called the load factor. So if we need to find the record associated with some key, what will be the time complexity? It will be order of one plus alpha, right? This one is for the hash function call, as you mean that the hash function call takes constant time, and alpha, the load factor, is the average length of the linked list in the chain. So is this a constant-time operation? Well, it is not, because it depends on the load factor, so if the load factor is a constant, that is, if n is some linear function of m, then alpha will become constant, and in that case, finding a record by its key in the hash table will become a constant-time operation. So with changing n, m needs to keep up with it, at least by a constant factor, and if you care to look at the Java source file for the Hashtable or the HashMap class in the java.util package inside the JDK, you will find that its capacity changes when we keep adding records into the hash table or the hash map, so that the load factor remains constant. Even if you take a look at the Javadocs of HashMap, you will see references to capacity and load factor, all right? It's worth spending some time going through the Javadocs, at least. The default load factor that is used in a hash map, for example, as of Java 7, is 0.75
+hash function
+	The main idea of hashing is that, for any object which is acting as a key, we find some numeric representation of it and then hash it so that we can get to a slot in the array to be able to insert the data associated with that key. A good hash function should be able to distribute the keys uniformly into the slots of the array. And the keys themselves are natural numbers. Possibly, large natural numbers, which when hashed, can map to an index of the array, all right? For example, if you want to hash this string, hash itself, you must first get to a natural number representation of it, all right? So, how can we do that? Well, we can choose the key values of each letter and then maybe add them up. But this won't be a great way to get to a natural number because many character sequences may arrive at this same number. Although we would like this number to be large and sort of unique, that is, at the minimum, there may not be many character sequences which may (mumbling) to the same number at least under these (mumbling) assumptions. Another approach could be, because there are 128 unique key characters, we can use 128 as kind of (mumbling) and calculate the number by using the positional weight of the key number associated with the character. This seems to be more reasonable than the first one. Anyway, the first the step is to get a natural number representation of the object, and that's why, if you may know, we need to override the hash code method inside of a Java class in case we need to use objects of our custom class keys inside a set or a map. When we try to insert an object in a set or as a key, the first thing that Java does is to call the hash code method on that object, and then hashes then detail value return into (mumbling) which can be used directly as an area index. Because the first step is to represent a key as a natural number, we will assume that the key is somehow represented as a natural number, which is then hashed into another natural number that maps directly into an area index. Let's say we have these keys. 501, two, five, 25. And we have an area of size 25, okay? Here, N, which is the number of keys, is 25. And the area size, M, is also 25. One of the most simple hashing mechanisms can be just to divide the key with the size of the area and return the remainder. If we hash the key, 501, the hash function will find the remainder of 501 divided by 25. It is one. So, the data associated with key 501 will go to index one in the array. As you can see, calling this hash function is a constant time operation. Similarly, if you had to get the data corresponding to a key you can hash the key again to find the index where the data could possibly be and just return the data in constant time. That's pretty cool, right? This method of hashing is called the method of division. It's kind of a quick and dirty way to hash, although there are better methods which are practically used in libraries out there, but we will discuss this method because it's quite easy to implement and it gives a fair idea about what hashing is about. So, just like earlier, key 525 may be hashed to return zero so that data associated with that key would be stored at index zero of the array. Similarly, other keys may also be hashed. Now, what happens if we have more number of keys than the size of the array? Well, if we use the same strategy, we will get into cases of collision. All right? But then, we may use the method of chaining to resolve these collisions. Consider this case now. We have 13 keys ranging from 500 to 524, all even numbers, and they are to be hashed and stored in an array of size 12, or even 13, doesn't matter. If we hash the key 500, we get an eight. So, we use index eight to store the satellite data associated with key 500. Similarly, 502 can be hashed to give a value of 10 and so on. If you notice, keys 512 and 524 also hash to eight, right? So, although the number of keys is about equal to the number of slots, the data will be placed in even numbered slots of the array. That is indices zero to four and so on. It's just because of the way the data is. Each of these slots get in a case of collision, but the odd number indices remain unused. This is definitely not a great way for hashing. Even if you use this, realistically, we choose the size of the array to be a prime number which is not close to a power of two or 10. But there are better methods than this one like the method of multiplication, which we'll not discuss here. The important thing is to understand what hashing is about using a simple method so that we are not bogged down by the details and complications of more realistic methods.
+open addressing
+	how to resolve collisions using chaining. In this lecture we will learn another way to do that, open addressing. This method is used especially in context of those applications where one would not like to maintain a link to a list or if we are not allowed to read the data of any other element in the list. So in this way, the cords are directly inserted in the area. Here in this area, I'm showing the keys. Actually the area will contain the satellite data associated with the key. But just to show that some value associated with a particular key is present in some slot and is showing the key itself, all right? So let's say we want to hash the key to 56, so we hash it along with another argument. Let's say we start with a zero. This zero is called the Probe Step. So first time we hash with a probe step of zero. And let's say that the hash value is three. But you already have a recorded index three, so we hash again, but this time with a probe step as one, all right?. Let's say this hash is to zero. And again we have a record at that annex in the table. So we hash again with a probe step of two. And this time, we get an empty slot. So we insert the record at this index in the area, okay? So this is general idea of Open Addressing. Now Open Addressing requires that the number of keys should be less than the table size. Because the table may fill up and this is not a problem if you use chaining. Because with Open Addressing if the table gets full it will keep probing and not get a place to insert the record. Another issue with Open Addressing is that deleting a record is not very straightforward, all right? Let's say a few records are already inserted in this area. And we delete the record at index zero, which has a key 321. But now if you want to delete the record associated with key 256 we will do a probe, hit index three, but that's not key 256 so we probe again, going to index zero. But because this record was deleted earlier, we may think that the record for key 256 does not exist in this table. So there are tricks like not deleting the record actually, rather we can mark them as deleted. But it's not straightforward, all right? So delete is difficult in case of Open Addressing.
+strategy open addressing
+	There are many strategies for using open addressing, and we will discuss a couple of them here. One of the simplest ways to use what is called linear probing, alright? In this we start from a base probe step, that is the probe step is zero. And we hit an index, say index three, as shown here. If this index is already full we just go to the next index, which is index four, and if this index is full, we go to the next step. So we keep increasing the index linearly from the base index until we hit an empty slot, where we insert the record. So if you want to write this as an expression, we can write it like this. Hashing the key in probe step I is same as hashing it in the zero probe step, which is the base, and then just add I to it. By the way we can choose any other linear function of I, rather than just I. But for the example, I is a good enough candidate for the linear function in I. Now the problem with linear probing is there to could be clustering of records in regions of hash table, and if that happens, than any key hashing into that region, will have to keep looking for an empty slot to put the record, which will further increase the size of the local cluster. Because of that, when we choose to use quadratic probing, and in this case instead of adding a linear function of the probe step to the base hash index, we can use a quadratic function, so that let's say that base probe step finds zero in the index which is full, so the next probe step is probe step one, we'll add one square to the base index zero, then the next step we'll add two square to index zero and so on, until it finds an index having an empty slot. So if we were to write this in the form of an expression, quadratic probing may be expressed as this. And here instead of just using I square, we may choose to use some other quadratic function of I, alright? Quadratic probing and why it's clustering to some extent but is not the best solution. The most practical of the approaches is, what is known as double hashing, which may be expressed like this. Here we have two different hash functions, h1 and h2, which are calculated upfront for the key. And then the indexes is found by multiplying I which is the probe step to one of the hash functions, and adding it to the other hash function. And then taking more M of the whole. It is statistically it has been seen double hashing works very well in the distributing keys evenly across the various slot of the table.
+time compexity
+	Let's look at the time complexity for searching or inserting a record in a hash table using open addressing. And here our assumption is that hashing is uniform. And what that means mathematically is that if we have a hash function h and a hash table of size m, then the probability that two non equal keys will hash to the same slot is one by m, all right? That is any key being hashed to a slot is equally likely independent of the other keys which may already have been put into the table. With that assumption, in the worst case the time complexity is clearly order of n. And why is that? Well, because in the worst case we may have to go over each slot of the area or the table until we get the item we are looking for or get an empty slot for the new record to be inserted. So the worst case is not very interesting, it's kind of bad. But on an average hash tables are very fast data structures for inserting and finding items, all right? So that's what we'll discuss here, the average case time complexity. Now the number of probe steps if we were using open addressing is less than or equal to one by one minus alpha, if alpha is less than one. And what is alpha? It's the load factor given my n over m, where n is the number of keys and m is the area size or the table size. So if the table size is more than the number of keys to be inserted, the number of probes will be less than this expression. And this can be found by using some mathematics which I'll not talk about here. Essentially we express a probability of inserting the record and add up those into an infinite geometric progression to get this expression. Well, for now you can just take my word for it. That is the expression for the number of probe steps if alpha is less than one. So if the table is 50 percent full, alpha is 0.5, right? And hence, number of probes to find an empty slot or to find a record associated with a key will also be less than or equal to two. That's very fast. If alpha increases to 0.8, that is the table is 80 percent full, the number of probes in the worst case will now be five. When it's 90 percent full the number of probes will be less than or equal to 10. So the performance of inserting or reading a record drops as space utilization increases. And it drops really really fast. So essentially, for good performance the hash table should never be too full, okay? And if you see the Java source code for the hash table class in the JDK, they use alpha to be about 0.75 range. So hash tables in JDK operate at around 75 percent capacity. So here it's okay to waste some space to get better performance from your hash tables, all right?
+
+
+
+	
+	
+
+
+
  
  
  
